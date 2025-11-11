@@ -9,7 +9,11 @@ use App\Models\User;
 use App\Models\Lead;
 use App\Models\Country;
 use App\Models\Source;
+use App\Exports\LeadsExport;
+use Maatwebsite\Excel\Facades\Excel;
+
 use Yajra\DataTables\Facades\DataTables;
+
 
 class LeadController extends Controller
 {
@@ -110,8 +114,11 @@ class LeadController extends Controller
         })
         ->rawColumns(['name','stage','assigned_to','lead_source','action'])
         ->make(true);
-}
+    }
 
-     
+    public function export()
+{
+    return Excel::download(new LeadsExport, 'leads.xlsx');
+}
 
 }

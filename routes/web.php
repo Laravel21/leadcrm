@@ -39,6 +39,7 @@ Route::post('/source/store', [SourceController::class, 'store'])->name('source.s
 
 Route::get('/leads/{lead}/followups', [FollowUpController::class, 'index'])->name('followup.index');
 
+Route::get('/leads/export', [LeadController::class, 'export'])->name('leads.export');
 
 Route::get('/location',[LocationController::class,'index']);
 Route::post('/get-states',[LocationController::class,'getStates'])->name('getStates');

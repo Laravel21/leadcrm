@@ -7,6 +7,7 @@
             <div class="card">
                 <div class="card-header d-flex justify-content-between align-items-center">
                     <h4 class="card-title">Lead List</h4>
+                    <a href="{{ route('leads.export') }}" class="btn btn-success">Export to Excel</a>
                     <a href="{{ route('leads.create') }}" class="btn btn-primary btn-sm">Add New Lead</a>
                 </div>
 
